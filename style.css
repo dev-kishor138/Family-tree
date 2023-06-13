@@ -1,0 +1,158 @@
+body {
+    background-color: aliceblue;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+
+.genealogy-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+.genealogy-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+
+.genealogy-scroll::-webkit-scrollbar-thumb {
+    background: #212121;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.genealogy-scroll::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
+}
+
+
+
+.genealogy-body {
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 50px;
+    min-height: 500px;
+    padding-top: 10px;
+}
+
+.family-tree ul {
+    padding-top: 20px;
+    position: relative;
+    padding-left: 0px;
+    display: flex;
+}
+
+.family-tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+.family-tree li::before,
+.family-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 18px;
+}
+
+.family-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+.family-tree li:only-child::after,
+.family-tree li:only-child::before {
+    display: none;
+}
+
+.family-tree li:only-child {
+    padding-top: 0;
+}
+
+.family-tree li:first-child::before,
+.family-tree li:last-child::after {
+    border: 0 none;
+}
+
+.family-tree li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+
+.family-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+.family-tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.family-tree li a {
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.family-tree li a:hover+ul li::after,
+.family-tree li a:hover+ul li::before,
+.family-tree li a:hover+ul::before,
+.family-tree li a:hover+ul ul::before {
+    border-color: #fbba00;
+}
+
+
+.member-view-box {
+    padding: 0px 20px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+}
+
+.grandparent {
+    display: flex;
+    gap: 20px;
+}
+
+.member-image {
+    width: 60px;
+    position: relative;
+}
+
+.member-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    z-index: 1;
+}
